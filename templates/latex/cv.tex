@@ -1,4 +1,4 @@
-\documentclass[11pt,letter,sans]{moderncv}
+\documentclass[10pt,letter,sans]{moderncv}
 \DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
 \DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
 \DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
@@ -21,7 +21,7 @@
 
 %\frenchspacing
 
-\usepackage[backend=biber,style=ieee,defernumbers=true]{biblatex}
+\usepackage[backend=biber,style=ieee,defernumbers=true,dashed=false]{biblatex}
 
 % Make the author's name bold in publications.
 \newbibmacro{name:format}{%
@@ -40,7 +40,7 @@
 }
 
 \usepackage{lastpage}
-\cfoot{\addressfont\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
+%\cfoot{\addressfont\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
 
 \AtEndPreamble{\hypersetup{pdftitle={CV -- << name.first >> << name.last >>}}}
 \name{<< name.first >>}{<< name.last >>\vspace{2mm}}

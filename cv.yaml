@@ -5,7 +5,7 @@ phone: ~(507)~514~2491
 email: lindell@stanford.edu
 pdf: /data/cv.pdf
 src: https://github.com/davelindell/cv
-url: stanford.edu/\textasciitilde lindell
+url: davidlindell.com 
 social:
   github: davelindell
   twitter: davelindell
@@ -27,30 +27,30 @@ order:
   # - [teaching, Teaching Experience]
   - [industry, Industry Experience]
   # - [projects, Projects]
-  - [skills, Skills]
+  #- [skills, Skills]
   - [coursework, Graduate Coursework]
-  - [honors, Honors \& Awards]
+    #- [honors, Honors \& Awards]
 #  - [activities, Activities]
 
 education:
   - school: Stanford University
     location: Stanford, California
     degree: Ph.D. Electrical Engineering
-    dates: Sept. 2016 -- Present
+    dates: Sept 2016 -- Present
 
-  - school: Brigham Young University
-    location: Provo, Utah
-    degree: M.S. Electrical Engineering
-    dates: Sept. 2015 -- Apr. 2016
+    #  - school: Brigham Young University
+    #    location: Provo, Utah
+    #    degree: M.S. Electrical Engineering
+    #    dates: Sept. 2015 -- Apr. 2016
 
   - school: Brigham Young University
     location: Provo, Utah
     #degree: B.S. Electrical Engineering
-    degree: B.S. Electrical Engineering
-    dates: Sept. 2009 -- Apr. 2015
-    overallGPA: 4.00/4.00
+    degree: B.S. Electrical Engineering (4.00/4.00) \textit{Summa Cum Laude}\\ M.S. Electrical Engineering 
+    dates: Sept 2009 -- Apr 2016
+    #overallGPA: 4.00/4.00 \textit{Summa Cum Laude}
     #majorGPA: 4.00/4.00
-    honors: Summa Cum Laude
+    #honors: Summa Cum Laude
 
     #  - school: West High School (Mankato, MN)
     #dates: Jun. 2009
@@ -58,37 +58,48 @@ education:
 research:
   - place: Stanford University
     location: Stanford, California
-    title: Ph.D. Student
+    title: Ph.D. Candidate
     advisor: Prof. Gordon Wetzstein
-    dates: September 2016 -- Present
-    area: Computational Imaging
-    details: Optimization, machine learning, optics, and time-of-flight\\ sensors
-             for computer vision and remote sensing 
+    dates: Sept 2016 -- Present #Sept 2016 -- Dec 2016, Apr 2017 -- Present
+    area: Computational imaging, time-of-flight sensors, LIDAR systems
+    details:  Machine learning for robust range estimation, sensor fusion,\\ transient imaging, non-line-of-sight imaging
+    #  - place: Stanford University
+    #    location: Stanford, California
+    #    title: Ph.D. Rotation Student
+    #    advisor: Prof. Bernd Girod 
+    #    dates: Dec 2016 -- Apr 2017 
+    #    area: Virtual reality and rendering 
+    #    details: Motion parallax rendering using the Facebook Surround-360 camera
   - place: Brigham Young University
     location: Provo, Utah
     title: Research Assistant
     advisor: Prof. David Long
     dates: May 2014 -- Apr 2016
-    area: Radar Image Processing, Geoscience, Remote Sensing
-    details: Arctic sea ice classification and soil moisture estimation \\
-             (\url{http://github.com/davelindell/soil_moisture}).
-  - place: Brigham Young University
-    location: Provo, Utah
-    title: Undergraduate Research Assistant
-    advisor: Prof. Aaron Hawkins
-    dates: May 2013 -- May 2014
-    area: Microfabrication, semiconductor devices, circuit design
-    details: Fabrication of a solid-state single ion detection unit.
+    area: Radar image processing, geoscience, remote sensing
+    details: Arctic sea ice classification and soil moisture estimation 
+    #  - place: Brigham Young University
+    #    location: Provo, Utah
+    #    title: Undergraduate Research Assistant
+    #    advisor: Prof. Aaron Hawkins
+    #    dates: May 2013 -- May 2014
+    #    area: Microfabrication, semiconductor devices, circuit design
+    #    details: Fabrication of a solid-state single ion detection unit.
 
 industry:
+  - place: Intel Intelligent Systems Lab 
+    location: Santa Clara, CA
+    title: Intern  
+    dates: June 2018 -- September 2018
+    details: 
+        - Research in machine learning and acoustic sensing with Vladlen Koltun.
   - place: Software For Hire
     location: Mankato, Minnesota (Remote)
-    title: Computer Vision Specialist
+    title: Computer Vision Specialist 
     dates: March 2016 -- August 2016
     area:  Computer Vision (counting)
     details:
       - Built a fast, multithreaded vision algorithm for a pharmaceutical tablet
-        counter using open source software, including {\bf Boost}, {\bf OpenCV}, 
+        counter using open source libraries including {\bf Boost}, {\bf OpenCV}, 
         and {\bf Point Cloud Library}.
   - place: Rincon Research Corporation
     location: Tucson, Arizona
@@ -134,6 +145,9 @@ publications:
 
 
 coursework:
+  - semester: F2018
+    name: Machine Learning (CS-229)
+    instructor: A. Ng 
   - semester: Sp2017
     name: Convex Optimization (EE-364A)
     instructor: S. Boyd 
@@ -179,7 +193,7 @@ coursework:
 
 skills:
   - title: Languages
-    details: Bash, C, C++, Java, Matlab, \LaTeX, Python
+    details: Matlab, Python, C, C++, Java, Bash
 #  - title: Frameworks
 #    details: Akka, Android SDK/NDK, Caffe, Node.js, NumPy, TensorFlow,
 #      Torch7, Pandas, SciPy, scikit-learn, Spark, Spray
