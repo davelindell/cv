@@ -62,7 +62,7 @@ research:
     advisor: Prof. Gordon Wetzstein
     dates: Sept 2016 -- Present #Sept 2016 -- Dec 2016, Apr 2017 -- Present
     area: Computational imaging, time-of-flight sensors, LIDAR systems
-    details:  Machine learning for robust range estimation, sensor fusion,\\ transient imaging, non-line-of-sight imaging
+    details:  Machine learning for 3D Imaging, sensor fusion,\\ transient imaging, non-line-of-sight imaging
     #  - place: Stanford University
     #    location: Stanford, California
     #    title: Ph.D. Rotation Student
@@ -98,7 +98,7 @@ industry:
     dates: March 2016 -- August 2016
     area:  Computer Vision (counting)
     details:
-      - Built a fast, multithreaded vision algorithm for a pharmaceutical tablet
+      - Built a real-time, multithreaded vision algorithm for a pharmaceutical tablet
         counter using open source libraries including {\bf Boost}, {\bf OpenCV}, 
         and {\bf Point Cloud Library}.
   - place: Rincon Research Corporation
@@ -108,7 +108,7 @@ industry:
     details:
     - Developed a cloud-based digital video recording system to stream and 
       record live video. Integrated live broadcast television demodulation capability
-      using {\bf GNU Radio} and Rincon Research Corporation signal processing hardware.
+      using {\bf GNU Radio} and proprietary signal processing hardware.
 #teaching:
 #  - semester: S2016
 #    name: Distributed Systems
