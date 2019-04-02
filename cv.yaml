@@ -29,7 +29,7 @@ order:
   # - [projects, Projects]
   #- [skills, Skills]
   - [coursework, Graduate Coursework]
-    #- [honors, Honors \& Awards]
+  - [honors, Honors \& Awards]
 #  - [activities, Activities]
 
 education:
