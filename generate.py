@@ -114,35 +114,35 @@ def get_pub_md(context, config):
             pub['author'] = _format_author_list(pub['author'])
         return p
 
-    # contents = []
-    # for category in config['categories']:
-    #     type_content = {}
-    #     type_content['title'] = category['heading']
+        contents = []
+        for category in config['categories']:
+            type_content = {}
+            type_content['title'] = category['heading']
 
-    #     pubs = load_and_replace(category['file'])
+            pubs = load_and_replace(category['file'])
 
-    #     details = ""
-    #     # sep = "<br><br>\n"
-    #     sep = "\n"
-    #     for i, pub in enumerate(pubs):
-    #         details += _get_pub_str(pub, category['prefix'], i + 1) + sep
-    #     type_content['details'] = details
-    #     type_content['file'] = category['file']
-    #     contents.append(type_content)
+            details = ""
+            # sep = "<br><br>\n"
+            sep = "\n"
+            for i, pub in enumerate(pubs):
+                details += _get_pub_str(pub, category['prefix'], i + 1) + sep
+            type_content['details'] = details
+            type_content['file'] = category['file']
+            contents.append(type_content)
 
-    # print(config)
-    # import sys; sys.exit(-1)
+        # print(config)
+        # import sys; sys.exit(-1)
 
-    contents = {}
-    pubs = load_and_replace(config['file'])
-    details = ""
-    sep = "\n"
-    for i, pub in enumerate(pubs):
-        details += _get_pub_str(pub, '', i + 1) + sep
-    contents['details'] = details
-    contents['file'] = config['file']
+        #contents = {}
+        #pubs = load_and_replace(config['file'])
+        #details = ""
+        #sep = "\n"
+        for i, pub in enumerate(pubs):
+            details += _get_pub_str(pub, '', i + 1) + sep
+        contents['details'] = details
+        contents['file'] = config['file']
 
-    return contents
+        return contents
 
 
 class RenderContext(object):
@@ -218,7 +218,7 @@ class RenderContext(object):
                 section_data['data'] = section_content
             elif section_tag in ['coursework', 'education', 'honors',
                                  'industry', 'research',
-                                 'skills', 'teaching']:
+                                 'skills', 'teaching', 'talks', 'theses', 'demos']:
                 section_data['items'] = section_content
                 section_template_name = os.path.join(
                     self.SECTIONS_DIR, section_tag + self._file_ending)

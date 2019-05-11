@@ -1,0 +1,9 @@
+\vspace{5mm}
+~< extends "section.tex" >~
+~< block body >~
+~< for thesis in items >~
+\cvitem{\bf << thesis.type>>}{}
+\hspace{1em} \cvitem{Title}{\textit << thesis.title >>}
+\hspace{1em} \cvitem{Supervisor}{<< thesis.supervisor >>}
+~< endfor >~
+~< endblock body >~

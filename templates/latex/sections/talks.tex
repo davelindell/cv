@@ -1,0 +1,10 @@
+~< extends "section.tex" >~
+~< block body >~
+~< for talk in items >~
+\cvlistitem{
+    \bf << talk.place >>,
+    \it << talk.name >>,
+    << talk.date>>.
+}
+~< endfor >~
+~< endblock body >~

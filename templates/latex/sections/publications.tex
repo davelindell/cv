@@ -1,21 +1,19 @@
 ~< extends "section.tex" >~
 
 ~< block body >~
-\renewcommand*{\bibfont}{\small}
 
-<#
-~< for p in items.categories >~
+\renewcommand*{\bibfont}{\small}
+~< for p in content.categories >~
 \subsection{<<p.heading>>}
 \begin{refsection}[publications/<<p.file>>]
   \nocite{*}
   \printbibliography[heading=none,prefixnumbers=<<p.prefix>>]
 \end{refsection}
 ~< endfor >~
-#>
 
-\begin{refsection}[publications/<<content.file>>]
-  \nocite{*}
-  \printbibliography[heading=none,prefixnumbers=]
-\end{refsection}
+%\begin{refsection}[publications/<<content.file>>]
+%  \nocite{*}
+%  \printbibliography[heading=none,prefixnumbers=]
+%\end{refsection}
 
 ~< endblock body >~

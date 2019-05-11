@@ -23,6 +23,21 @@
 
 \usepackage[backend=biber,style=ieee,defernumbers=true,dashed=false]{biblatex}
 
+\AtDataInput{%
+  \ifcsundef{bbx@processedentries:\therefsection}
+    {\csgdef{bbx@processedentries:\therefsection}{}}
+    {}%
+  \xifinlistcs{\thefield{entrykey}}{bbx@processedentries:\therefsection}{}{%
+    \listcsxadd{bbx@processedentries:\therefsection}{\thefield{entrykey}}%
+    \csnumgdef{bbx@entrycount:\therefsection:\thefield{keywords}}{%
+      \csuse{bbx@entrycount:\therefsection:\thefield{keywords}}+1}}}
+
+% Print the labelnumber as the total number of entries in the
+% current refsection, minus the actual labelnumber, plus one
+\DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}    
+\newrobustcmd*{\mkbibdesc}[1]{%
+  \number\numexpr\csuse{bbx@entrycount:\therefsection:\thefield{keywords}}+1-#1\relax}
+
 % Make the author's name bold in publications.
 \newbibmacro{name:format}{%
   \ifthenelse{\equal{\namepartfamily}{<< name.last >>}}%

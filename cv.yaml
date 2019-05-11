@@ -28,9 +28,13 @@ order:
   - [industry, Industry Experience]
   # - [projects, Projects]
   #- [skills, Skills]
+  - [talks, Invited Talks]
   - [coursework, Graduate Coursework]
   - [honors, Honors \& Awards]
+  - [theses, Theses]
+  - [demos, Public Demonstrations]
 #  - [activities, Activities]
+#
 
 education:
   - school: Stanford University
@@ -91,16 +95,28 @@ industry:
     title: Intern  
     dates: June 2018 -- September 2018
     details: 
-        - Acoustic non-line-of-sight imaging with Vladlen Koltun.
+        - Worked with Vladlen Koltun on acoustic non-line-of-sight imaging.
+  - place: Dahlia Lighting (startup)
+    location: Palo Alto, CA
+    dates: September 2017 -- January 2019
+    title: Computer Vision Specialist
+    details:
+        - Worked on computer vision for smart lighting systems. 
+          Acquired by Lexi Devices {\newline}({\url{https://lexidevices.com/}}). 
   - place: Software For Hire
     location: Mankato, Minnesota (Remote)
-    title: Computer Vision Specialist 
-    dates: March 2016 -- August 2016
+    title: Computer Vision Consultant 
+    dates: March 2016 -- June 2019 
     area:  Computer Vision (counting)
     details:
-      - Built a real-time, multithreaded vision algorithm for a pharmaceutical tablet
-        counter using open source libraries including {\bf Boost}, {\bf OpenCV}, 
-        and {\bf Point Cloud Library}.
+      - Developed and shipped computer vision algorithms deployed on a 
+        pharmaceutical tablet counter{\newline}({\url{https://www.eyeconvpc.com/}}). 
+      - Built neural-net-based algorithm for recognition and counting
+        using PyTorch and MXNet; achieved real-time performance for 
+        product deployed on Intel CPUs. 
+      - Designed real-time multithreaded vision algorithm for tablet
+        counting using hand-crafted features with Boost, OpenCV, 
+        and Point Cloud Library.
   - place: Rincon Research Corporation
     location: Tucson, Arizona
     title: Electrical Engineering Intern
@@ -108,7 +124,7 @@ industry:
     details:
     - Developed a cloud-based digital video recording system to stream and 
       record live video. Integrated live broadcast television demodulation capability
-      using {\bf GNU Radio} and proprietary signal processing hardware.
+      using GNU Radio and proprietary signal processing hardware.
 #teaching:
 #  - semester: S2016
 #    name: Distributed Systems
@@ -120,16 +136,15 @@ industry:
 #    position: TA
 
 publications:
-  name: "D. Lindell"
-  file: selected.bib
-
-  # categories:
-  #   - heading: Conference Proceedings
-  #     prefix: C
-  #     file: conference.bib
-    # - heading: Journal Articles
-      # prefix: J
-      # file: journal.bib
+    #name: "D. Lindell"
+    #file: selected.bib
+  categories:
+      - heading: Journal Articles
+        prefix: J
+        file: journal.bib
+      - heading: Conference Proceedings
+        prefix: C
+        file: conference.bib
     # - heading: Workshop, Symposium, and Short Papers
     #   prefix: W
     #   file: short.bib
@@ -213,6 +228,26 @@ honors:
   - title: Tau Beta Pi Scholarship
     year: 2014
   #- title: Dean's List, Brigham Young University, 2012 -- 2015
+
+talks:
+    - place: Carnegie Mellon University Graphics Lab
+      name: Computational Single-Photon Imaging
+      date: 1/23/2019
+    - place: Stanford Center for Image Systems Engineering 
+      name: Computational Imaging with Single-Photon Detectors
+      date: 5/8/2019
+
+theses:
+    - type: Master's Thesis
+      title: Arctic Sea Ice Classification and Soil Moisture Estimation
+             Using Microwave Sensors
+      supervisor: David G. Long (Brigham Young University)
+
+demos:
+    - title: Real-time non-line-of-sight imaging
+      authors: M. O'Toole, D.B. Lindell, G. Wetzstein
+      year: 2018
+      place: ACM SIGGRAPH Emerging Technologies
 
 projects:
   website:
