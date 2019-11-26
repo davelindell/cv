@@ -236,6 +236,21 @@ talks:
     - place: Stanford Center for Image Systems Engineering 
       name: Computational Imaging with Single-Photon Detectors
       date: 5/8/2019
+    - place: Silicon Valley ACM SIGGRAPH Chapter 
+      name: Computational Single-Photon Imaging 
+      date: 5/30/2019
+    - place: Berkeley Center for Computational Imaging 
+      name: Computational Imaging with Single-Photon Detectors
+      date: 9/4/2019
+    - place: MIT Research Laboratory of Electronics
+      name: Efficient Confocal Non-Line-of-Sight Imaging 
+      date: 11/21/2019
+    - place: Boston University Center for Information \& Systems Engineering
+      name: Computational Imaging with Single-Photon Detectors
+      date: 11/22/2019
+    - place: TEDxBeaconStreet 2019 
+      name: How future cars will see around corners 
+      date: 11/23/2019
 
 theses:
     - type: Master's Thesis
