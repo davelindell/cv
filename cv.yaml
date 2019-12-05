@@ -50,7 +50,7 @@ education:
   - school: Brigham Young University
     location: Provo, Utah
     #degree: B.S. Electrical Engineering
-    degree: B.S. Electrical Engineering (4.00/4.00) \textit{Summa Cum Laude}\\ M.S. Electrical Engineering 
+    degree:  M.S. Electrical Engineering\\B.S. Electrical Engineering (4.00/4.00) \textit{Summa Cum Laude}
     dates: Sept 2009 -- Apr 2016
     #overallGPA: 4.00/4.00 \textit{Summa Cum Laude}
     #majorGPA: 4.00/4.00
