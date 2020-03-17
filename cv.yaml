@@ -66,7 +66,7 @@ research:
     advisor: Prof. Gordon Wetzstein
     dates: Sept 2016 -- Present #Sept 2016 -- Dec 2016, Apr 2017 -- Present
     area: Computational imaging, time-of-flight sensors, LIDAR systems
-    details:  Machine learning for 3D Imaging, sensor fusion,\\ transient imaging, non-line-of-sight imaging
+    details:  Machine learning for 3D imaging, sensor fusion,\\ transient imaging, non-line-of-sight imaging
     #  - place: Stanford University
     #    location: Stanford, California
     #    title: Ph.D. Rotation Student
@@ -96,13 +96,13 @@ industry:
     dates: June 2018 -- September 2018
     details: 
         - Worked with Vladlen Koltun on acoustic non-line-of-sight imaging.
-  - place: Dahlia Lighting (startup)
-    location: Palo Alto, CA
-    dates: September 2017 -- January 2019
-    title: Computer Vision Specialist
-    details:
-        - Worked on computer vision for smart lighting systems. 
-          Acquired by Lexi Devices {\newline}({\url{https://lexidevices.com/}}). 
+          #- place: Dahlia Lighting (startup)
+          #  location: Palo Alto, CA
+          #  dates: September 2017 -- January 2019
+          #  title: Computer Vision Specialist
+          #  details:
+          #      - Worked on computer vision for smart lighting systems. 
+          #        Acquired by Lexi Devices {\newline}({\url{https://lexidevices.com/}}). 
   - place: Software For Hire
     location: Mankato, Minnesota (Remote)
     title: Computer Vision Consultant 
@@ -249,7 +249,7 @@ talks:
       name: Computational Imaging with Single-Photon Detectors
       date: 11/22/2019
     - place: TEDxBeaconStreet 2019 
-      name: How future cars will see around corners 
+      name: A camera to see around corners 
       date: 11/23/2019
 
 theses:
