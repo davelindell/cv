@@ -217,7 +217,7 @@ class RenderContext(object):
                 section_template_name = "section" + self._file_ending
                 section_data['data'] = section_content
             elif section_tag in ['coursework', 'education', 'honors',
-                                 'industry', 'research', 'mentorship',
+                                 'industry', 'research', 'mentorship', 'service',
                                  'skills', 'teaching', 'talks', 'theses', 'demos']:
                 section_data['items'] = section_content
                 section_template_name = os.path.join(

@@ -21,19 +21,20 @@ order:
   # - [interests, Research Interests]
   - [education, Education]
   - [research, Research Experience]
+  - [theses, Theses]
   # - [NEWPAGE, NEWPAGE]
   - [publications, Publications]
   # - [NEWPAGE, NEWPAGE]
   - [mentorship, Mentorship] 
   - [teaching, Teaching Experience]
-  - [industry, Industry Experience]
   # - [projects, Projects]
   #- [skills, Skills]
   - [talks, Invited Talks]
   - [coursework, Graduate Coursework]
   - [honors, Honors \& Awards]
-  - [theses, Theses]
   - [demos, Public Demonstrations]
+  - [service, Service]
+  - [industry, Industry Experience]
 #  - [activities, Activities]
 #
 
@@ -51,7 +52,7 @@ education:
   - school: Brigham Young University
     location: Provo, Utah
     #degree: B.S. Electrical Engineering
-    degree:  M.S. Electrical Engineering\\B.S. Electrical Engineering (4.00/4.00) \textit{Summa Cum Laude}
+    degree:  M.S. Electrical Engineering\\ \hspace*{1em} B.S. Electrical Engineering (4.00/4.00) \textit{Summa Cum Laude}
     dates: Sept 2009 -- Apr 2016
     #overallGPA: 4.00/4.00 \textit{Summa Cum Laude}
     #majorGPA: 4.00/4.00
@@ -67,7 +68,7 @@ research:
     advisor: Prof. Gordon Wetzstein
     dates: Sept 2016 -- Present #Sept 2016 -- Dec 2016, Apr 2017 -- Present
     area: Computational imaging, time-of-flight sensors, LIDAR systems
-    details:  Machine learning for 3D imaging, sensor fusion,\\ transient imaging, non-line-of-sight imaging
+    details:  3D imaging, sensor fusion,\\ transient imaging, non-line-of-sight imaging
     #  - place: Stanford University
     #    location: Stanford, California
     #    title: Ph.D. Rotation Student
@@ -126,6 +127,7 @@ industry:
     - Developed a cloud-based digital video recording system to stream and 
       record live video. Integrated live broadcast television demodulation capability
       using GNU Radio and proprietary signal processing hardware.
+
 teaching:
   - semester: Winter 2020
     name: Computational Imaging 
@@ -154,7 +156,6 @@ publications:
     # - heading: Posters
     #   prefix: P
     #   file: posters.bib
-
 
 coursework:
   - semester: F2018
@@ -291,3 +292,10 @@ mentorship:
     place: Stanford University
     date: Summer 2019
 
+service:
+ - title: Program Chair
+   event: CVPR Workshop on Computational Cameras and Displays
+   years: 2020
+ - title: Program Committee 
+   event: Int. Conference on Computational Photography (ICCP)
+   years: 2019 -- 2020
