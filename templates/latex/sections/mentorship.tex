@@ -1,0 +1,9 @@
+\vspace{3mm}
+~< extends "section.tex" >~
+~< block body >~
+\begin{itemize}
+    ~< for person in items >~
+    \item << person.person >>, << person.place >> \hfill << person.date >>
+    ~< endfor >~
+\end{itemize}
+~< endblock body >~
