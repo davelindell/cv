@@ -133,6 +133,10 @@ teaching:
     name: Computational Imaging 
     short: EE 367/CS 448i 
     position: TA
+  - semester: Summer 2020
+    name: Computational Time-Resolved Imaging, Single-Photon Sensing, \\and Non-Line-of-Sight Imaging\\
+    short: ACM SIGGRAPH 2020 course
+    position: organizer and co-instructor
 
 publications:
     #name: "D. Lindell"
