@@ -1,0 +1,378 @@
+% arara: latexmk: {options: ['-c']}
+% arara: pdflatex
+% arara: biber
+% arara: pdflatex: {shell: yes}
+% arara: pdflatex: {shell: yes}
+
+\documentclass[10pt,letter,sans]{moderncv}
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
+\DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
+
+
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\definecolor{color2}{rgb}{0.25,0.25,0.25}
+%\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[top=1in, bottom=1in, left=1.1in, right=1.1in]{geometry}
+\setlength{\hintscolumnwidth}{1cm}
+%\setlength{\makecvtitlenamewidth}{10cm}
+
+%\frenchspacing
+
+\usepackage[backend=biber,style=ieee,defernumbers=true,dashed=false]{biblatex}
+
+\AtDataInput{%
+  \ifcsundef{bbx@processedentries:\therefsection}
+    {\csgdef{bbx@processedentries:\therefsection}{}}
+    {}%
+  \xifinlistcs{\thefield{entrykey}}{bbx@processedentries:\therefsection}{}{%
+    \listcsxadd{bbx@processedentries:\therefsection}{\thefield{entrykey}}%
+    \csnumgdef{bbx@entrycount:\therefsection:\thefield{keywords}}{%
+      \csuse{bbx@entrycount:\therefsection:\thefield{keywords}}+1}}}
+
+% Print the labelnumber as the total number of entries in the
+% current refsection, minus the actual labelnumber, plus one
+\DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}    
+\newrobustcmd*{\mkbibdesc}[1]{%
+  \number\numexpr\csuse{bbx@entrycount:\therefsection:\thefield{keywords}}+1-#1\relax}
+
+% Make the author's name bold in publications.
+\newbibmacro{name:format}{%
+  \ifthenelse{\equal{\namepartfamily}{Lindell}}%
+    {\textbf{\ifblank{\namepartgiveni}{}{\namepartgiveni\space}\namepartfamily}}%
+    {\ifblank{\namepartgiveni}{}{\namepartgiveni\space}\namepartfamily}%
+  \ifthenelse{\value{listcount}=1 \AND \value{liststop}=2}%
+    {\space and}%
+    {\ifthenelse{\value{listcount}<\value{liststop}}%
+      {\addcomma}%
+      {}%
+    }%
+}
+\DeclareNameFormat{author}{
+   \usebibmacro{name:format}%
+}
+
+\usepackage{lastpage}
+%\cfoot{\addressfont\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
+
+\AtEndPreamble{\hypersetup{pdftitle={CV -- David Lindell}}}
+\name{David}{Lindell\vspace{2mm}}
+%\title{Resumé title}
+%\address{street and number}{postcode city}{country}
+\phone{~(507)~514~2491}
+\email{lindell@stanford.edu}
+\homepage{davidlindell.com}
+\social[linkedin]{davelindell}
+%\social[twitter]{davelindell}
+\social[github]{davelindell}
+%\extrainfo{\small Generated on \today}
+%\photo[64pt][0.4pt]{picture}
+% \quote{Generated on \today}
+
+
+\begin{document}
+\makecvtitle
+
+\vspace{-11mm}
+
+\section{Education}
+  {\bf Stanford University}
+  {\hfill}
+  Sept 2016 -- Present \\
+    \hspace*{1em} 
+    Ph.D. Electrical Engineering
+  \newline
+  {\bf Brigham Young University}
+  {\hfill}
+  Sept 2009 -- Apr 2016 \\
+    \hspace*{1em} 
+    M.S. Electrical Engineering\\ \hspace*{1em} B.S. Electrical Engineering (4.00/4.00) \textit{Summa Cum Laude}
+  \newline
+  \vspace{-5mm}
+
+
+\section{Research Experience}
+	  {\bf Ph.D. Candidate} \hfill Sept 2016 -- Present\\
+	  {{ Stanford University}}\\
+	  {\it Advisor:} Prof. Gordon Wetzstein\\
+	  {\it Area:} Computational imaging, time-of-flight sensors, LIDAR systems
+	  \begin{itemize}
+	  \item 3D imaging, machine learning, transient imaging,\\ non-line-of-sight imaging
+	  \end{itemize}
+	  \vspace{3mm}
+	  {\bf Research Assistant} \hfill May 2014 -- Apr 2016\\
+	  {{ Brigham Young University}}\\
+	  {\it Advisor:} Prof. David Long\\
+	  {\it Area:} Radar image processing, geoscience, remote sensing
+	  \begin{itemize}
+	  \item Arctic sea ice classification and soil moisture estimation
+	  \end{itemize}
+	  \vspace{3mm}
+  \vspace{-5mm}
+
+
+\vspace{3mm}
+\section{Theses}
+{\bf Master's Thesis} \newline
+\hspace*{1em} \cvitem{Title}{\it Arctic Sea Ice Classification and Soil Moisture Estimation Using Microwave Sensors}
+\hspace*{1em} \cvitem{Supervisor}{David G. Long (Brigham Young University)}
+  \vspace{-5mm}
+
+
+\vspace{3mm}
+\section{Publications}
+
+\renewcommand*{\bibfont}{\small}
+\subsection{Journal Articles}
+\begin{refsection}[publications/journal.bib]
+  \nocite{*}
+  \printbibliography[heading=none,prefixnumbers=J]
+\end{refsection}
+\subsection{Conference Proceedings}
+\begin{refsection}[publications/conference.bib]
+  \nocite{*}
+  \printbibliography[heading=none,prefixnumbers=C]
+\end{refsection}
+\subsection{Non-refereed Publications}
+\begin{refsection}[publications/preprints.bib]
+  \nocite{*}
+  \printbibliography[heading=none,prefixnumbers=P]
+\end{refsection}
+
+%\begin{refsection}[publications/]
+%  \nocite{*}
+%  \printbibliography[heading=none,prefixnumbers=]
+%\end{refsection}
+
+  \vspace{-5mm}
+
+
+\vspace{3mm}
+\section{Invited Talks}
+\cvlistitem{
+    \bf TEDxBeaconStreet 2019,
+    \it A camera to see around corners,
+    11/23/2019.
+}
+\cvlistitem{
+    \bf Boston University Center for Information \& Systems Engineering,
+    \it Computational Imaging with Single-Photon Detectors,
+    11/22/2019.
+}
+\cvlistitem{
+    \bf MIT Research Laboratory of Electronics,
+    \it Efficient Confocal Non-Line-of-Sight Imaging,
+    11/21/2019.
+}
+\cvlistitem{
+    \bf Berkeley Center for Computational Imaging,
+    \it Computational Imaging with Single-Photon Detectors,
+    9/4/2019.
+}
+\cvlistitem{
+    \bf Silicon Valley ACM SIGGRAPH Chapter,
+    \it Computational Single-Photon Imaging,
+    5/30/2019.
+}
+\cvlistitem{
+    \bf Stanford Center for Image Systems Engineering,
+    \it Computational Imaging with Single-Photon Detectors,
+    5/8/2019.
+}
+\cvlistitem{
+    \bf Carnegie Mellon University Graphics Lab,
+    \it Computational Single-Photon Imaging,
+    1/23/2019.
+}
+  \vspace{-5mm}
+
+
+\vspace{5mm}
+\section{Graduate Coursework}
+\cvlistitem{
+    Machine Learning (CS-229),
+    A. Ng
+    \hfill
+    F2018
+}
+\cvlistitem{
+    Convex Optimization (EE-364A),
+    S. Boyd
+    \hfill
+    Sp2017
+}
+\cvlistitem{
+    Convolutional Neural Networks for Visual Recognition (CS-231N),
+    F. Li
+    \hfill
+    Sp2017
+}
+\cvlistitem{
+    Computational Imaging and Display (EE-367),
+    G. Wetzstein
+    \hfill
+    W2017
+}
+\cvlistitem{
+    Information Theory (EE 376),
+    D. Tse
+    \hfill
+    W2017
+}
+\cvlistitem{
+    The Fourier Transform and its Applications (EE-261),
+    B. Osgood
+    \hfill
+    F2016
+}
+\cvlistitem{
+    Linear Dynamical Systems (EE-263),
+    R.N. Mahalati
+    \hfill
+    F2016
+}
+\cvlistitem{
+    Detection and Estimation Theory (EE-672),
+    M. Rice
+    \hfill
+    W2016
+}
+\cvlistitem{
+    Continuous Phase Modulation (EE-682R),
+    M. Rice
+    \hfill
+    W2016
+}
+\cvlistitem{
+    Robotic Vision (EE-631),
+    D.J. Lee
+    \hfill
+    W2016
+}
+\cvlistitem{
+    Math of Signals and Systems (EE-671),
+    B. Jeffs
+    \hfill
+    F2015
+}
+\cvlistitem{
+    Stochastic Processes (EE-670),
+    B. Mazzeo
+    \hfill
+    F2015
+}
+\cvlistitem{
+    Medical Imaging \& Image Reconstruction (EE-576),
+    N. Bangerter
+    \hfill
+    F2015
+}
+\cvlistitem{
+    Antennas and Propogation (EE-665),
+    K. Warnick
+    \hfill
+    W2015
+}
+\cvlistitem{
+    Microwave Remote Sensing (EE-568),
+    D. Long
+    \hfill
+    F2014
+}
+  \vspace{-5mm}
+
+
+\vspace{3mm}
+\section{Honors \& Awards}
+\begin{itemize}
+    \item Stanford Graduate Research Fellowship \hfill 2016 -- 2019
+    \item Tau Beta Pi Honor Society \hfill Inducted 2013
+    \item BYU Office of Research \& Creative Activities Grant Winner \hfill 2015
+    \item BYU Heritage Scholarship \hfill 2012 -- 2015
+    \item Tau Beta Pi Scholarship \hfill 2014
+\end{itemize}
+  \vspace{-5mm}
+
+
+\vspace{5mm}
+\section{Public Demonstrations}
+\cvlistitem{{\bf Real-time non-line-of-sight imaging}, M. O'Toole, D.B. Lindell, G. Wetzstein, 2018, ACM SIGGRAPH Emerging Technologies.} 
+  \vspace{-5mm}
+
+
+\vspace{3mm}
+\section{Service}
+\begin{itemize}
+    \item {\bf Program Chair}, CVPR Workshop on Computational Cameras and Displays \hfill 2020
+    \item {\bf Program Committee}, Int. Conference on Computational Photography (ICCP) \hfill 2019 -- 2020
+\end{itemize}
+  \vspace{-5mm}
+
+
+\vspace{3mm}
+\section{Mentorship}
+\begin{itemize}
+    \item Thomas Teisberg, Stanford University \hfill Fall 2019
+    \item Jason Corona, South San Francisco High School CA \hfill Summer-Fall 2019
+    \item Alex Bergman, Stanford University \hfill Summer 2019
+    \item Mark Nishimura, Stanford University \hfill Summer 2019
+\end{itemize}
+  \vspace{-5mm}
+
+
+\vspace{3mm}
+\section{Teaching Experience}
+        \cvlistitem{
+          { \bf Computational Imaging }
+          (EE 367/CS 448i),
+          TA
+          \hfill
+          Winter 2020
+        }
+        \cvlistitem{
+          { \bf Computational Time-Resolved Imaging, Single-Photon Sensing, \\and Non-Line-of-Sight Imaging\\ }
+          (ACM SIGGRAPH 2020 course),
+          organizer and co-instructor
+          \hfill
+          Summer 2020
+        }
+  \vspace{-5mm}
+
+
+\vspace{3mm}
+\section{Industry Experience}
+      {\bf Intel Intelligent Systems Lab} \hfill June 2018 -- September 2018 \newline
+      {\it Intern}
+        \iftrue
+        \begin{itemize}
+\item Worked with Vladlen Koltun on acoustic non-line-of-sight imaging.\end{itemize}
+        \fi
+	\vspace{2mm}
+      {\bf Software For Hire} \hfill March 2016 -- June 2019 \newline
+      {\it Computer Vision Consultant}
+        \iftrue
+        \begin{itemize}
+\item Developed and shipped computer vision algorithms deployed on a pharmaceutical tablet counter{\newline}({\url{https://www.eyeconvpc.com/}}).\item Built neural-net-based algorithm for recognition and counting using PyTorch and MXNet; achieved real-time performance for product deployed on Intel CPUs.\item Designed real-time multithreaded vision algorithm for tablet counting using hand-crafted features with Boost, OpenCV, and Point Cloud Library.\end{itemize}
+        \fi
+	\vspace{2mm}
+      {\bf Rincon Research Corporation} \hfill June 2016 -- July 2016 \newline
+      {\it Electrical Engineering Intern}
+        \iftrue
+        \begin{itemize}
+\item Developed a cloud-based digital video recording system to stream and record live video. Integrated live broadcast television demodulation capability using GNU Radio and proprietary signal processing hardware.\end{itemize}
+        \fi
+	\vspace{2mm}
+  \vspace{-5mm}
+
+
+
+
+\end{document}
