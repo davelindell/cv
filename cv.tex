@@ -16,8 +16,8 @@
 \DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
 \DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
 
-\moderncvstyle{classic}
-\moderncvcolor{blue}
+\moderncvstyle{banking}
+\moderncvcolor{black}
 \definecolor{color2}{rgb}{0.25,0.25,0.25}
 %\renewcommand{\familydefault}{\sfdefault}
 
@@ -65,7 +65,7 @@
     \printfield{labelprefix}%
     \printfield{labelnumber}}}
     {\setlength{\labelwidth}{100pt}%{\labelnumberwidth}%
- \setlength{\leftmargin}{108pt}%{\labelwidth}%
+ \setlength{\leftmargin}{32pt}%{\labelwidth}%
  \setlength{\labelsep}{\biblabelsep}%
  %\addtolength{\leftmargin}{\labelsep}%
  \setlength{\itemsep}{\bibitemsep}%
@@ -80,7 +80,7 @@
 
 \AtEndPreamble{\hypersetup{pdftitle={CV -- David B. Lindell}}}
 \name{David B.}{Lindell\vspace{2mm}}
-\title{Curriculum Vitae}
+% \title{Curriculum Vitae}
 \address{Room BA7228, 40 St.\ George St.}{Toronto, ON M5S 2E4, Canada}{}
 \mobile{+1~507~514~2491}
 \email{lindell@cs.toronto.edu}
@@ -95,14 +95,16 @@
 \begin{document}
 \makecvtitle
 
+% \cventry{years}{degree/job title}{institution/employer}{localization}{optional: grade/...}{optional: comment/job description}
+
 \section{Current Appointments}
-\cventry{7/2022--}{Asst. Professor}{Dept.\ of Computer Science}{University of Toronto}{Toronto, ON}{}
-\cventry{7/2022--}{Faculty Affiliate}{}{Vector Institute}{Toronto, ON}{}
+\cventry{2022--present}{Dept.\ of Computer Science}{Assistant Professor}{}{University of Toronto}{}
+\cventry{2022--present}{Vector Institute}{Faculty Affiliate}{}{}{}
 
 \section{Education}
-\cventry{9/2016--1/2021}{Ph.D.}{Electrical Engineering}{Stanford University}{Stanford, CA}{Committee: Gordon Wetzstein, Bernd Girod, Mark Horowitz, Vivek Goyal, James Harris}
-\cventry{9/2015--4/2016}{M.Sc.}{Electrical Engineering}{Brigham Young University}{Provo, UT}{Advisor: David G. Long} 
-\cventry{9/2009--4/2015}{B.Sc.}{Electrical Engineering}{Brigham Young University}{Provo, UT}{Advisors: David G. Long, Aaron Hawkins}
+\cventry{2016--2021}{Ph.D. Electrical Engineering}{Stanford University}{Stanford, CA}{}{Committee: Gordon Wetzstein, Bernd Girod, Mark Horowitz, Vivek Goyal, James Harris}
+\cventry{2015--2016}{M.Sc. Electrical Engineering}{Brigham Young University}{Provo, UT}{}{Advisor: David G. Long} 
+\cventry{2009--2015}{B.Sc. Electrical Engineering}{Brigham Young University}{Provo, UT}{}{Advisors: David G. Long, Aaron Hawkins}
 
 \section{Awards}
 \cvitem{2021}{ACM SIGGRAPH Outstanding Doctoral Dissertation Honorable Mention} 
@@ -114,16 +116,18 @@
 \cvitem{2012--2015}{BYU Heritage Scholarship} 
 
 \section{Previous Professional Experience}
-\cventry{1/2021--4/2022}{Postdoctoral Scholar}{Electrical Engineering}{Stanford University}{Stanford, CA}{}
-\cventry{6/2018--11/2018}{Intern}{Intelligent Systems Lab}{Intel Corporation}{Santa Clara, CA}{Advisor: Vladlen Koltun}
-\cventry{6/2016--7/2016}{Intern}{}{Rincon Research Corporation}{Tucson, AZ}{}
+\cventry{2021--2022}{Postdoctoral Scholar}{Stanford University}{Stanford, CA}{}{Advisor: Gordon Wetzstein}
+\cventry{2018}{Intern}{Intelligent Systems Lab, Intel Corporation}{Santa Clara, CA}{}{Advisor: Vladlen Koltun}
+\cventry{2016}{Intern}{Rincon Research Corporation}{Tucson, AZ}{}{}
 
-\section{Service}
+\section{Conference Service}
+\cvitem{\bf{Technical Papers Committee}}{SIGGRAPH Asia 2023}
+\cvitem{\bf{Area Chair}}{Neural Information Processing Systems (Neurips) 2023}
 \cvitem{\bf{Area Chair}}{IEEE Conference on Computer Vision and Pattern Recognition (CVPR) 2023}
 \cvitem{\bf{Finance Co-Chair}}{Int. Conference on Computational Photography (ICCP) 2022}
-\cvitem{\bf{Program Chair}}{CVPR Workshop on Computational Cameras and Displays (CCD) 2021}
-\cvitem{}{CVPR Workshop on Computational Cameras and Displays (CCD) 2020}
+\cvitem{\bf{Program Chair}}{CVPR Workshop on Computational Cameras and Displays (CCD) 2020--2021}
 \cvitem{\bf{Program Committee}}{Int. Conference on Computational Photography (ICCP) 2019--2023}
+
 % \cvitem{\bf{Paper Reviewer}}{Nature} 
 % \cvitem{}{Nature Communications} 
 % \cvitem{}{Nature Photonics} 
@@ -142,17 +146,37 @@
 % \cvitem{}{ICLR (2021--)} 
 % \cvitem{}{NeurIPS (2021--)} 
 
-\cvitem{\bf{Paper Reviewer}}{Nature, Nature Communications, Nature Photonics, Science Advances, Optica, Optics Express, CVPR (2020--), ECCV (2020--), ICCV (2021--), ICCP (2019--), ICLR (2021--), NeurIPS (2021--), SIGGRAPH (2020--), SIGGRAPH Asia (2022--), TCI, TPAMI} 
+\section{Referee Service}
+\begingroup
+\let\bfseries\relax
+\cventry[-1em]{}{}{CVPR}{2020--}{}{}
+\cventry[-1em]{}{}{ECCV}{2020--}{}{}
+\cventry[-1em]{}{}{ICCV}{2021--}{}{}
+\cventry[-1em]{}{}{ICCP}{2019--}{}{}
+\cventry[-1em]{}{}{ICLR}{2021--}{}{}
+\cventry[-1em]{}{}{NeurIPS}{2021--}{}{}
+\cventry[-1em]{}{}{SIGGRAPH}{2020--}{}{}
+\cventry[-1em]{}{}{SIGGRAPH Asia}{2022--}{}{}
+\cventry[-1em]{}{}{Nature}{}{}{}
+\cventry[-1em]{}{}{Nature Communications}{}{}{}
+\cventry[-1em]{}{}{Nature Photonics}{}{}{}
+\cventry[-1em]{}{}{Optica}{}{}{}
+\cventry[-1em]{}{}{Optics Express}{}{}{}
+\cventry[-1em]{}{}{Science Advances}{}{}{}
+\cventry[-1em]{}{}{IEEE Transactions on Computational Imaging}{}{}{}
+\cventry[-1em]{}{}{IEEE Transactions on Pattern Analysis and Machine Intelligence}{}{}{}
+\endgroup
+% \cvitem{\bf{Paper Reviewer}}{Nature, Nature Communications, Nature Photonics, Science Advances, Optica, Optics Express, CVPR (2020--), ECCV (2020--), ICCV (2021--), ICCP (2019--), ICLR (2021--), NeurIPS (2021--), SIGGRAPH (2020--), SIGGRAPH Asia (2022--), TCI, TPAMI} 
 
 % \cvitem{\bf{Paper Reviewer}}{Nature, Nature Communications, Nature Photonics, Science Advances, SIGGRAPH (2020--), SIGGRAPH Asia (2022--), TPAMI, CVPR (2020--), ECCV (2020--), ICCV (2021--), TCI, ICCP (2019--), Optics Express, ICLR (2021--), NeurIPS (2021--)} 
-\cvitem{\bf{Member}}{ACM, IEEE}
+% \cvitem{\bf{Member}}{ACM, IEEE}
 
 \section{Teaching}
-\cvitem{Instructor}{Introduction to Image Understanding, CSC420 (University of Toronto W2022)}
-\cvitem{Instructor}{Computational Imaging, CSC2529 (University of Toronto F2022)}
-\cvitem{Co-Instructor}{Computational Imaging, EE367/CS448i (Stanford W2022)}
-\cvitem{Teaching Assistant}{Computational Imaging, EE367/CS448i (Stanford W2020)}
-\cvitem{Instructor/Organizer}{Computational Time-Resolved Imaging, Single-Photon Sensing and Non-Line-of-Sight Imaging (ACM SIGGRAPH 2020)}
+\cventry{2023}{CSC420: Introduction to Image Understanding}{University of Toronto}{Instructor}{}{}
+\cventry{2022}{CSC2529: Computational Imaging}{University of Toronto}{Instructor}{}{}
+\cventry{2022}{EE367/CS448i: Computational Imaging}{Stanford University}{Instructor}{}{}
+\cventry{2020}{EE367/CS448i: Computational Imaging}{Stanford University}{Teaching Assistant}{}{}
+\cventry{2020}{Computational Time-Resolved Imaging, Single-Photon Sensing and Non-Line-of-Sight Imaging}{ACM SIGGRAPH}{Instructor}{}{}
 % \cvitem{Presenter}{Imaging and Microscopy Reading Group (Stanford 2016--2020)}
 
 %\renewcommand*{\bibfont}{\small}
@@ -175,20 +199,23 @@
 %  \printbibliography[heading=none]
 %\end{refsection}
 
+\section{Public Demonstrations}
+\begin{refsection}[publications/demo.bib]
+  \newrefcontext[labelprefix=D]
+  \nocite{*}
+  \printbibliography[heading=none]
+\end{refsection}
+
 \section{Theses}
     \cvitem{2021}{Computational Imaging with Single-Photon Detectors. Ph.D. Thesis.}
     \cvitem{2016}{Arctic Sea Ice Classification and Soil Moisture Estimation Using Microwave Sensors. Master's Thesis.}
-
-\section{Public Demonstrations}
-    \cventry{2018}{\bf Real-time non-line-of-sight imaging}{M. O'Toole, D.B. Lindell, G. Wetzstein}{2018}{ACM SIGGRAPH Emerging Technologies}{}
-    \cventry{2018}{\bf Real-time non-line-of-sight imaging}{M. O'Toole, D.B. Lindell, G. Wetzstein}{2018}{IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}{}
 
 \section{Invited Talks}
     \cvitem{2022}{Physics-Based Visual Computing for Efficient 3D Vision and Sensing, University of Windsor, Windsor, ON.} % 2/17/2022
     \cvitem{2022}{Recent Advances in Non-Line-of-Sight Imaging, IEEE Signal Processing Society, Virtual.} % 12/14/2022
     \cvitem{2022}{Physics-Based Visual Computing for Efficient 3D Vision and Sensing, Purdue Computational Imaging Seminar, Virtual.} % 10/11/2022
-    \cvitem{2022}{Physics-Based Visual Computing for Efficient 3D Vision and Sensing, Caltech, Pasadena, CA.} % 5/27/2022
     \cvitem{2022}{Confocal Non-Line-of-Sight Imaging and Diffuse Tomography Using Single-Photon Sensors, Imaging and Applied Optics Congress, Vancouver, BC.} % 7/11/2022
+    \cvitem{2022}{Physics-Based Visual Computing for Efficient 3D Vision and Sensing, Caltech, Pasadena, CA.} % 5/27/2022
     \cvitem{2022}{Implicit Neural Representation Networks for Fitting Signals, Derivatives, and Integrals, Silicon Valley ACM SIGGRAPH Chapter, Virtual.} % 1/20/2022
     \cvitem{2021}{Implicit Neural Representation Networks for Fitting Signals, Derivatives, and Integrals, Samsung AI Centre, Virtual.} % 10/15/2021
     \cvitem{2021}{Implicit Neural Representation Networks for Fitting Signals, Derivatives, and Integrals, University of Erlangen-Nuremberg, Virtual.} % 9/14/2021
@@ -210,39 +237,62 @@
     \cvitem{2019}{Computational Single-Photon Imaging, Carnegie Mellon University Graphics Lab, Pittsburgh, PA.} %1/23/2019
 
 
-\section{Mentorship}
-    \subsection{University of Toronto}
-    \cventry{\bf Ph.D.}{Anagh Malik}{University of Toronto}{Sep 2022--}{}{}
-    \cventry{}{Sam Sinha}{University of Toronto}{Sep 2022--}{}{Co-advised with Igor Gilitschenski}
-    \cventry{}{Esther Lin}{University of Toronto}{Sep 2022--}{}{Co-advised with Kyros Kutulakos}
-    \cventry{\bf MScAC}{EJay Guo}{University of Toronto}{May 2022--Dec 2022}{}{Co-advised with DNEG}
-    \cventry{}{Yihan (Nick) Ni}{University of Toronto}{May 2023--Dec 2023}{}{Co-advised with MODIFACE}
-    \cventry{}{Kejia Yin}{University of Toronto}{May 2023--Dec 2023}{}{Co-advised with Samsung}
-    \cventry{}{Vahid Zehtab}{University of Toronto}{May 2023--Dec 2023}{}{Co-advised with DNEG}
-    \cventry{\bf Undergraduate}{Junru Lin}{University of Toronto}{Sep 2022--}{}{}
-    \cventry{}{Haojun Qiu}{University of Toronto}{Sep 2022--}{}{}
-    \cventry{}{Justin Tran}{University of Toronto}{Sep 2022--}{}{}
-    \cventry{}{Skyler Zhang}{University of Toronto}{Sep 2022--}{}{}
-    \cventry{}{Shahmeer Athar}{University of Toronto}{Jan 2023--}{}{}
-    \cventry{}{Rishit Dagli}{University of Toronto}{Jan 2023--}{}{}
-    \cventry{}{Zixin Guo}{University of Toronto}{Jan 2023--}{}{}
-    \cventry{}{Qing (Amy) Lyu}{University of Toronto}{Jan 2023--}{}{}
-    \cventry{}{Dorsa Molaverdikhani}{University of Toronto}{Jan 2023--}{}{}
-    \cventry{}{Zach Salehe}{University of Toronto}{Jan 2023--}{}{}
-    \cventry{}{Louis Zhang}{University of Toronto}{Jan 2023--}{}{}
-    \vspace{1em}
-    \subsection{Stanford University}
-    \cventry{\bf Ph.D.}{Axel Levy}{Stanford}{Fall 2021}{}{}
-    \cventry{}{Dave Van Veen}{Stanford}{Fall 2021}{}{}
-    \cventry{}{William Meng}{Stanford}{Summer 2021}{}{}
-    \cventry{}{Qingqing Zhao}{Stanford}{Fall 2020}{}{}
-    \cventry{}{Manu Gopakumar}{Stanford}{Fall 2020}{}{}
-    \cventry{}{Thomas Teisberg}{Stanford}{Fall 2019}{}{}
-    \cventry{}{Alex Bergman}{Stanford}{Summer 2019}{}{}
-    \cventry{}{Mark Nishimura}{Stanford}{Summer 2019}{}{}
-    \cventry{}{Zhanghao Sun}{Stanford}{Winter 2019}{}{}
-    \cventry{\bf High School}{Jason Corona}{South San Francisco High School CA}{2019--2020}{}{}
-  \vspace{-5mm}
+
+\section{PhD Advising}
+    \begingroup
+    \let\bfseries\relax
+    \cventry[0.5em]{}{PhD Candidate, University of Toronto}{Anagh Malik}{Sep 2022--}{}{}
+    \cventry[0.5em]{}{PhD Candidate, University of Toronto}{Samarth Sinha}{Sep 2022--}{}{Co-advised with Igor Gilitschenski}
+    \cventry[0.5em]{}{PhD Candidate, University of Toronto}{Esther Lin}{Sep 2022--}{}{Co-advised with Kyros Kutulakos}
+    \endgroup
+
+\section{Masters Advising}
+    \begingroup
+    \let\bfseries\relax
+    \cventry[0.5em]{}{MScAC, University of Toronto}{Kartik Kumar}{May 2023--Dec 2023}{}{Co-advised with DNEG}
+    \cventry[0.5em]{}{MScAC, University of Toronto}{Yihan (Nick) Ni}{May 2023--Dec 2023}{}{Co-advised with DNEG}
+    \cventry[0.5em]{}{MScAC, University of Toronto}{Kejia Yin}{May 2023--Dec 2023}{}{Co-advised with MODIFACE}
+    \cventry[0.5em]{}{MScAC, University of Toronto}{Vahid Zehtab}{May 2023--Dec 2023}{}{Co-advised with Samsung}
+    \cventry[0.5em]{}{MScAC, University of Toronto}{Vahid Zehtab}{May 2023--Dec 2023}{}{Co-advised with Samsung}
+    \cventry[0.5em]{}{MScAC, University of Toronto}{EJay Guo}{May 2022--Dec 2022}{}{Co-advised with DNEG}
+    \endgroup
+
+\section{Undergraduates}
+    \begingroup
+    \let\bfseries\relax
+    \cventry[0.5em]{}{University of Toronto}{Rishit Dagli}{Jan 2023--}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Roland Gao}{Jan 2023--}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Noah Juravsky}{May 2023--}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Dorsa Molaverdikhani}{Jan 2023--}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Haojun Qiu}{Sep 2022--}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Zach Salehe}{Jan 2023--}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Kevin Vaidyan}{May 2023--}{}{}
+    \cventry[0.5em]{}{IIT Kanpur}{Shresth Grover}{May 2023--}{}{}
+
+    \cventry[0.5em]{}{University of Toronto}{Junru Lin}{Sep 2022--May 2023}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Justin Tran}{Sep 2022--May 2023}{}{Thesis: Generative 3D shape modeling using latent space diffusion}
+    \cventry[0.5em]{}{University of Toronto}{Skyler Zhang}{Sep 2022--May 2023}{}{Thesis: Towards coded high-speed video acquisition using diffusion models}
+    \cventry[0.5em]{}{University of Toronto}{Shahmeer Athar}{Jan 2023--May 2023}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Zixin Guo}{Jan 2023--May 2023}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Qing (Amy) Lyu}{Jan 2023--May 2023}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Louis Zhang}{Jan 2023--May 2023}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Shahmeer Athar}{Jan 2023--May 2023}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Zixin Guo}{Jan 2023--May 2023}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Qing (Amy) Lyu}{Jan 2023--May 2023}{}{}
+    \cventry[0.5em]{}{University of Toronto}{Louis Zhang}{Jan 2023--May 2023}{}{}
+    \endgroup
+
+    % \subsection{Stanford University}
+    % \cventry{\bf Ph.D.}{Axel Levy}{Stanford}{Fall 2021}{}{}
+    % \cventry{}{Dave Van Veen}{Stanford}{Fall 2021}{}{}
+    % \cventry{}{William Meng}{Stanford}{Summer 2021}{}{}
+    % \cventry{}{Qingqing Zhao}{Stanford}{Fall 2020}{}{}
+    % \cventry{}{Manu Gopakumar}{Stanford}{Fall 2020}{}{}
+    % \cventry{}{Thomas Teisberg}{Stanford}{Fall 2019}{}{}
+    % \cventry{}{Alex Bergman}{Stanford}{Summer 2019}{}{}
+    % \cventry{}{Mark Nishimura}{Stanford}{Summer 2019}{}{}
+    % \cventry{}{Zhanghao Sun}{Stanford}{Winter 2019}{}{}
+    % \cventry{\bf High School}{Jason Corona}{South San Francisco High School CA}{2019--2020}{}{}
 
 %\vspace{5mm}
 %\section{Graduate Coursework}
