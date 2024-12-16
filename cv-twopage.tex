@@ -1,0 +1,170 @@
+% arara: latexmk: {options: ['-c']}
+% arara: pdflatex
+% arara: biber
+% arara: biber
+% arara: pdflatex: {shell: yes}
+% arara: pdflatex: {shell: yes}
+
+\documentclass[10pt,letter]{moderncv}
+\DeclareOldFontCommand{\rm}{\normalfont\rmfamily}{\mathrm}
+\DeclareOldFontCommand{\sf}{\normalfont\sffamily}{\mathsf}
+\DeclareOldFontCommand{\tt}{\normalfont\ttfamily}{\mathtt}
+\DeclareOldFontCommand{\bf}{\normalfont\bfseries}{\mathbf}
+\DeclareOldFontCommand{\it}{\normalfont\itshape}{\mathit}
+\DeclareOldFontCommand{\sl}{\normalfont\slshape}{\@nomath\sl}
+\DeclareOldFontCommand{\sc}{\normalfont\scshape}{\@nomath\sc}
+\DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
+\DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
+
+\moderncvstyle{banking}
+\moderncvcolor{black}
+\definecolor{color2}{rgb}{0.25,0.25,0.25}
+%\renewcommand{\familydefault}{\sfdefault}
+
+\usepackage[top=1in, bottom=1in, left=1.0in, right=1.0in]{geometry}
+\usepackage{comment}
+\setlength{\hintscolumnwidth}{3.5cm}
+%\setlength{\makecvtitlenamewidth}{10cm}
+%\frenchspacing
+
+\usepackage[maxcitenames=50,maxbibnames=99,backend=biber,style=ieee,sorting=ydnt,defernumbers=true,dashed=false]{biblatex}
+
+\AtDataInput{%
+  \ifcsundef{bbx@processedentries:\therefsection}
+    {\csgdef{bbx@processedentries:\therefsection}{}}
+    {}%
+  \xifinlistcs{\thefield{entrykey}}{bbx@processedentries:\therefsection}{}{%
+    \listcsxadd{bbx@processedentries:\therefsection}{\thefield{entrykey}}%
+    \csnumgdef{bbx@entrycount:\therefsection:\thefield{keywords}}{%
+      \csuse{bbx@entrycount:\therefsection:\thefield{keywords}}+1}}}
+
+% Print the labelnumber as the total number of entries in the
+% current refsection, minus the actual labelnumber, plus one
+\DeclareFieldFormat{labelnumber}{\mkbibdesc{#1}}    
+\newrobustcmd*{\mkbibdesc}[1]{%
+  \number\numexpr\csuse{bbx@entrycount:\therefsection:\thefield{keywords}}+1-#1\relax}
+
+% Make the author's name bold in publications.
+\newbibmacro{name:format}{%
+  \ifthenelse{\equal{\namepartfamily}{Lindell}}%
+    {\textbf{\ifblank{\namepartgiveni}{}{\namepartgiveni\space}\namepartfamily}}%
+    {\ifblank{\namepartgiveni}{}{\namepartgiveni\space}\namepartfamily}%
+  \ifthenelse{\value{listcount}=1 \AND \value{liststop}=2}%
+    {\space and}%
+    {\ifthenelse{\value{listcount}<\value{liststop}}%
+      {\addcomma}%
+      {}%
+    }%
+}
+\DeclareNameFormat{author}{
+   \usebibmacro{name:format}%
+}
+
+\defbibenvironment{bibliography}
+ {\list
+ {\printtext[labelnumberwidth]{%
+    \printfield{labelprefix}%
+    \printfield{labelnumber}}}
+    {\setlength{\labelwidth}{100pt}%{\labelnumberwidth}%
+ \setlength{\leftmargin}{32pt}%{\labelwidth}%
+ \setlength{\labelsep}{\biblabelsep}%
+ %\addtolength{\leftmargin}{\labelsep}%
+ \setlength{\itemsep}{\bibitemsep}%
+ \setlength{\parsep}{\bibparsep}}%
+}
+ {\endlist}
+ {\item}
+
+
+\usepackage{lastpage}
+%\cfoot{\addressfont\textcolor{gray}{Page \thepage\ of \pageref{LastPage}}}
+
+\AtEndPreamble{\hypersetup{pdftitle={CV -- David B. Lindell}}}
+\name{David B.}{Lindell\vspace{2mm}}
+% \title{Curriculum Vitae}
+\address{Room BA7228, 40 St.\ George St.}{Toronto, ON M5S 2E4, Canada}{}
+\mobile{+1~507~514~2491}
+\email{lindell@cs.toronto.edu}
+\homepage{davidlindell.com}
+%\social[linkedin]{davelindell}
+%\social[twitter]{davelindell}
+%\social[github]{davelindell}
+%\extrainfo{\small Generated on \today}
+%\photo[64pt][0.4pt]{picture}
+% \quote{Generated on \today}
+
+\begin{document}
+\makecvtitle
+
+% \cventry{years}{degree/job title}{institution/employer}{localization}{optional: grade/...}{optional: comment/job description}
+
+\section{Current Appointments}
+\cventry{2022--present}{Dept.\ of Computer Science}{Assistant Professor}{}{University of Toronto}{}
+\cventry{2022--present}{Vector Institute}{Faculty Affiliate}{}{}{}
+
+\section{Education}
+\cventry{2016--2021}{Ph.D. Electrical Engineering}{Stanford University}{Stanford, CA}{}{Committee: Gordon Wetzstein, Bernd Girod, Mark Horowitz, Vivek Goyal, James Harris}
+\cventry{2015--2016}{M.Sc. Electrical Engineering}{Brigham Young University}{Provo, UT}{}{Advisor: David G. Long} 
+\cventry{2009--2015}{B.Sc. Electrical Engineering}{Brigham Young University}{Provo, UT}{}{Advisors: David G. Long, Aaron Hawkins}
+
+\section{Awards}
+\begingroup
+\let\bfseries\relax
+\cventry[-1em]{}{}{Google Research Scholar Award}{2024}{}{}
+\cventry[-1em]{}{}{Sony Focused Research Award}{2023}{}{}
+\cventry[-1em]{}{}{Sony Faculty Innovation Award}{2023}{}{}
+\cventry[-1em]{}{}{Marr Prize}{2023}{}{}
+\cventry[-1em]{}{}{Connaught New Researcher Award}{2023}{}{}
+\cventry[-1em]{}{}{ACM SIGGRAPH Outstanding Doctoral Dissertation Honorable Mention}{2021}{}{}
+\cventry[-1em]{}{}{ACM SIGGRAPH Thesis Fast Forward Honorable Mention}{2020}{}{}
+\cventry[-1em]{}{}{CVPR Outstanding Reviewer}{2020}{}{}
+\cventry[-1em]{}{}{Stanford Graduate Research Fellowship}{2016--2020}{}{}
+\cventry[-1em]{}{}{BYU Office of Research \& Creative Activities Grant}{2015}{}{}
+\cventry[-1em]{}{}{Tau Beta Pi Scholarship}{2014}{}{}
+\cventry[-1em]{}{}{BYU Heritage Scholarship}{2012--2015}{}{}
+\endgroup
+
+\section{Previous Professional Experience}
+\cventry{2021--2022}{Postdoctoral Scholar}{Stanford University}{Stanford, CA}{}{Advisor: Gordon Wetzstein}
+\cventry{2018}{Intern}{Intelligent Systems Lab, Intel Corporation}{Santa Clara, CA}{}{Advisor: Vladlen Koltun}
+\cventry{2016}{Intern}{Rincon Research Corporation}{Tucson, AZ}{}{}
+
+\section{Conference Organization/Editorial Positions}
+\cventry[-1em]{}{}{Associate Editor: \normalfont{IEEE Transactions on Computational Imaging}}{\normalfont{2023--2024}}{}{}
+\cventry[-1em]{}{}{Area Chair: \normalfont{Neural Information Processing Systems (NeurIPS)}}{\normalfont 2023, 2024}{}{}
+\cventry[-1em]{}{}{Area Chair: \normalfont{IEEE Conference on Computer Vision and Pattern Recognition (CVPR)}}{\normalfont 2023, 2024}{}{}
+\cventry[-1em]{}{}{Finance Co-Chair: \normalfont{Int. Conference on Computational Photography (ICCP)}}{\normalfont 2022}{}{}
+\cventry[-1em]{}{}{Program Chair: \normalfont{Int. Conference on Computational Photography (ICCP)}}{\normalfont 2025}{}{}
+\cventry[-1em]{}{}{Program Chair: \normalfont{IEEE Workshop on Computational Cameras and Displays (CCD)}}{\normalfont 2020,2021,2023}{}{}
+\cventry[-1em]{}{}{Program Committee: \normalfont{Int. Conference on Computational Photography (ICCP)}}{\normalfont 2019--2024}{}{}
+\cventry[-1em]{}{}{Technical Papers Committee: \normalfont{SIGGRAPH Asia}}{\normalfont 2023}{}{}
+
+\vspace{-0.5em}
+% \cvitem{\bf{Paper Reviewer}}{Nature} 
+% \cvitem{}{Nature Communications} 
+% \cvitem{}{Nature Photonics} 
+% \cvitem{}{Science Advances} 
+% \cvitem{}{IEEE Transactions on Computational Imaging} 
+% \cvitem{}{IEEE Transactions on Pattern Analysis and Machine Intelligence} 
+% \cvitem{}{ACM Transactions on Graphics} 
+% \cvitem{}{Optics Express} 
+% \cvitem{}{Optica} 
+% \cvitem{}{SIGGRAPH (2020--)} 
+% \cvitem{}{SIGGRAPH Asia (2022--)} 
+% \cvitem{}{CVPR (2020--)} 
+% \cvitem{}{ECCV (2020--)} 
+% \cvitem{}{ICCP (2019--)} 
+% \cvitem{}{ICCV (2021--)} 
+% \cvitem{}{ICLR (2021--)} 
+% \cvitem{}{NeurIPS (2021--)} 
+
+\section{Selected Publications}
+\begin{refsection}[publications/selected.bib]
+  \newrefcontext[labelprefix=P]
+  \nocite{*}
+  \printbibliography[heading=none]
+\end{refsection}
+
+
+%\renewcommand*{\bibfont}{\small}
+\end{document}
