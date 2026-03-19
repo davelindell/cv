@@ -8,12 +8,39 @@
 % \DeclareRobustCommand*\cal{\@fontswitch\relax\mathcal}
 % \DeclareRobustCommand*\mit{\@fontswitch\relax\mathnormal}
 
-% \usepackage{fontspec}
-% \defaultfontfeatures{Numbers=Lining}
+\usepackage{fontspec}
+\defaultfontfeatures{Numbers=Lining}
+\setmainfont{texgyrepagella}[
+  Extension = .otf,
+  UprightFont = *-regular,
+  BoldFont = *-bold,
+  ItalicFont = *-italic,
+  BoldItalicFont = *-bolditalic
+]
+
+\makeatletter
+\def\tgpagella{}  % trick moderncv into thinking tgpagella isn't available
+\makeatother
 
 \moderncvstyle{banking}
+\setmainfont{texgyrepagella}[
+  Extension = .otf,
+  UprightFont = *-regular,
+  BoldFont = *-bold,
+  ItalicFont = *-italic,
+  BoldItalicFont = *-bolditalic
+]
+
 \moderncvcolor{black}
 \definecolor{color2}{rgb}{0.25,0.25,0.25}
+% \AtBeginDocument{%
+%   \DeclareFontFamily{TU}{qpl}{}%
+%   \DeclareFontShape{TU}{qpl}{m}{n}{<->ssub*lmr/m/n}{}%
+%   \DeclareFontShape{TU}{qpl}{b}{n}{<->ssub*lmr/b/n}{}%
+%   \DeclareFontShape{TU}{qpl}{bx}{n}{<->ssub*lmr/bx/n}{}%
+%   \DeclareFontShape{TU}{qpl}{m}{it}{<->ssub*lmr/m/it}{}%
+% }
+
 %\renewcommand{\familydefault}{\sfdefault}
 
 \usepackage[top=1in, bottom=1in, left=1.0in, right=1.0in]{geometry}
